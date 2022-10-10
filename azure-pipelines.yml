@@ -15,20 +15,16 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-  displayName: 'Install Node.Js'
-- script: |    
-    npm install -g testcafe
-  displayName: 'Install testcafe'
-- script: |    
-    npm install testcafe-reporter-xunit
-  displayName: 'Install xunit report'
-- script: |    
-    npm run test:chrome:DGR:Report
-  displayName: 'Run Test cafe test scripts'
-
+- task: CmdLine@2
+  inputs:
+    script: 'npm install'
+  
+- task: CmdLine@2
+  inputs:
+    script: 'npm test'
+  
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: '**/report.xml'
     testResultsFormat: 'JUnit'
+    testResultsFiles: '**/report.xml'
+    testRunTitle: 'Publish Test Result'
