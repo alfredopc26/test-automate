@@ -1,7 +1,7 @@
 import { Selector, } from 'testcafe';
 
 fixture `Search Bar - Home page`
-    .page `https://jobgether.com`;
+    .page `https://staging.jobgether.com`;
 
 test('Puedo iniciar una búsqueda sin seleccionar ninguna opción', async (t: TestController) => {
     await t

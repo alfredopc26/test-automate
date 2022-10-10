@@ -1,7 +1,7 @@
 import { Selector, } from 'testcafe';
 
 fixture `search-engine`
-    .page `https://jobgether.com/search-offers?sort=relevance&page=1`;
+    .page `https://staging.jobgether.com/search-offers?sort=relevance&page=1`;
 
 
 test('Search offers by Full remote filter', async (t: TestController) => {

@@ -9,8 +9,6 @@
 
     const testCafeOptions = {
         hostname: 'localhost',
-        port1:    1337,
-        port2:    1338,
         sslOptions,
     };
 
@@ -21,7 +19,8 @@
         // Browsers restrict self-signed certificate usage unless you
         // explicitly set a flag specific to each browser.
         // For Chrome, this is '--allow-insecure-localhost'.
-        .browsers('chrome --autoplay-policy=no-user-gesture-required --allow-insecure-localhost --ignore-certificate-errors')
+        .browsers('chrome:headless --config-file')
+        .reporter('html', 'reporter/all_test.html')
         .run();
 
     await testcafe.close();
