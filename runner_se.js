@@ -15,7 +15,7 @@
     const testcafe = await createTestCafe(testCafeOptions);
 
     await testcafe.createRunner()
-        .src('./tests')
+        .src('./tests/email-alert.ts')
         // Browsers restrict self-signed certificate usage unless you
         // explicitly set a flag specific to each browser.
         // For Chrome, this is '--allow-insecure-localhost'.
