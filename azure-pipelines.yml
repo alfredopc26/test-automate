@@ -25,7 +25,7 @@ steps:
     npm install testcafe-reporter-xunit
   displayName: 'Install xunit report'
 - script: |    
-    npm run test
+    npm test
   displayName: 'Run Test cafe test scripts'
 
 - task: PublishTestResults@2
